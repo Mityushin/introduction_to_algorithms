@@ -27,6 +27,11 @@ public class InsertionArraySortTest {
         Assert.assertArrayEquals(expected, actual);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void sortAsc_null() {
+        Assert.assertNull(insertionSort.sortAsc(null));
+    }
+
     @Test
     public void sortDesc_alreadySorted() {
         Integer[] integers = new Integer[]{5, 4, 3, 2, 1};
@@ -45,5 +50,10 @@ public class InsertionArraySortTest {
         Number[] actual = insertionSort.sortDesc(integers);
 
         Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void sortDesc_null() {
+        Assert.assertNull(insertionSort.sortDesc(null));
     }
 }

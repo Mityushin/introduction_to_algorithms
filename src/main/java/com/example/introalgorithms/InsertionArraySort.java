@@ -1,6 +1,7 @@
 package com.example.introalgorithms;
 
 import java.util.Comparator;
+import java.util.Objects;
 
 public class InsertionArraySort<T extends Number> implements ArraySort<T> {
 
@@ -8,11 +9,11 @@ public class InsertionArraySort<T extends Number> implements ArraySort<T> {
     private static final Comparator<Number> NUMBER_COMPARATOR_DESC = NUMBER_COMPARATOR_ASC.reversed();
 
     public T[] sortAsc(T[] array) {
-        return sort(array, NUMBER_COMPARATOR_ASC);
+        return sort(Objects.requireNonNull(array), NUMBER_COMPARATOR_ASC);
     }
 
     public T[] sortDesc(T[] array) {
-        return sort(array, NUMBER_COMPARATOR_DESC);
+        return sort(Objects.requireNonNull(array), NUMBER_COMPARATOR_DESC);
     }
 
     private T[] sort(T[] array, Comparator<Number> comparator) {
